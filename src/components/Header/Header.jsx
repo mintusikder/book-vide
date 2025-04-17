@@ -3,9 +3,7 @@ import React from "react";
 const Header = () => {
   const nav = (
     <>
-      <li>
-        <a>Home</a>
-      </li>
+      <button className="btn btn-success text-white">View The List</button>
     </>
   );
   return (
@@ -42,7 +40,7 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{nav}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <button className="btn btn-success text-white">Sign In</button>
       </div>
     </div>
   );
