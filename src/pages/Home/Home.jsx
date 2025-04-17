@@ -1,14 +1,16 @@
 import React from "react";
 import Banner from "../../components/Banner/Banner";
+import { useLoaderData } from "react-router";
 import Books from "../Books/Books";
 
 const Home = () => {
+  const books = useLoaderData();
   return (
     <div>
       <div className="py-12">
         <Banner></Banner>
       </div>
-      <Books></Books>
+      <Books books={books}></Books>
     </div>
   );
 };

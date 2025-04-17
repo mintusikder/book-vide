@@ -1,7 +1,6 @@
 import React from "react";
 import { Star } from "lucide-react";
 const Book = ({ book }) => {
-  console.log(book);
   const { image, bookName, publisher, rating, tags } = book;
   return (
     <div className="card bg-base-100 w-96 shadow-sm">
