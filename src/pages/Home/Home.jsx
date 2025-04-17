@@ -7,7 +7,7 @@ const Home = () => {
   const books = useLoaderData();
   return (
     <div>
-      <div className="py-12">
+      <div className="md:py-12 pb-12">
         <Banner></Banner>
       </div>
       <Books books={books}></Books>

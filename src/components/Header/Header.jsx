@@ -1,10 +1,23 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 const Header = () => {
   const nav = (
-    <>
-      <button className="btn btn-success text-white">View The List</button>
-    </>
+    <div className=" space-x-3">
+      <NavLink to="/">
+        <li class="btn btn-outline btn-success hover:text-white">Home</li>
+      </NavLink>
+      <NavLink to="/">
+        <li class="btn btn-outline btn-success hover:text-white">
+          Listed Books
+        </li>
+      </NavLink>
+      <NavLink to="/">
+        <li class="btn btn-outline btn-success hover:text-white">
+          Pages to Read
+        </li>
+      </NavLink>
+    </div>
   );
   return (
     <div className="navbar bg-base-100 shadow-sm">
