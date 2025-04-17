@@ -1,14 +1,29 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+import { addToStoredDb } from "../../utitliy/adToDb";
 
 const BookDetails = () => {
   const { id } = useParams();
   const bookId = parseInt(id);
   const data = useLoaderData();
   console.log(data);
-  const singleBook = data.find((book) => book.bookId === bookId);
+  const singleBook =
+    (Array.isArray(data) && data?.find((book) => book.bookId === bookId)) || [];
   console.log(singleBook);
-  const { image, bookName, publisher, review, rating, tags } = singleBook;
+  const {
+    image,
+    bookName,
+    publisher,
+    review,
+    rating,
+    tags,
+    totalPages,
+    yearOfPublishing,
+  } = singleBook;
+
+  const handelReadMark = (id) => {
+    addToStoredDb(id)
+  };
   return (
     <div className="pt-12">
       <div className="md:flex gap-20">
@@ -27,18 +42,29 @@ const BookDetails = () => {
           <div className="flex">
             {" "}
             <span className="font-bold">Tags : </span>
-            {tags.map((tag) => (
-              <div className="badge badge-soft badge-success mr-2 mb-3">
+            {tags.map((tag, index) => (
+              <div
+                key={index}
+                className="badge badge-soft badge-success mr-2 mb-3"
+              >
                 {tag}
               </div>
             ))}
           </div>
           <hr />
+          <p>Number of Pages : {totalPages}</p>
+          <p>Publisher : {publisher}</p>
+          <p>Year of Publishing : {yearOfPublishing}</p>
           <p>Rating : {rating}</p>
-         <div>
-         <button className="btn btn-soft btn-success mr-3">Success</button>
-         <button className="btn btn-soft btn-info">Info</button>
-         </div>
+          <div>
+            <button
+              onClick={() => handelReadMark(id)}
+              className="btn btn-soft btn-success mr-3"
+            >
+              Read
+            </button>
+            <button className="btn btn-soft btn-info">Wishlist</button>
+          </div>
         </div>
       </div>
     </div>

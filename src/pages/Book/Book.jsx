@@ -14,8 +14,8 @@ const Book = ({ book }) => {
           />
         </figure>
         <div className=" py-6  px-16">
-          {tags.map((tag) => (
-            <div className="badge badge-soft badge-success mr-2 mb-3">
+          {tags.map((tag,index ) => (
+            <div key={index} className="badge badge-soft badge-success mr-2 mb-3">
               {tag}
             </div>
           ))}

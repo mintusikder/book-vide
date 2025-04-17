@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Header = () => {
   const nav = (
@@ -20,7 +20,7 @@ const Header = () => {
     </div>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -47,13 +47,14 @@ const Header = () => {
             {nav}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Book Vibe</a>
+        <Link className="font-bold text-xl">Book Vibe</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{nav}</ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-success text-white">Sign In</button>
+        <button className="btn btn-success mr-3 text-white">Sign In</button>
+        <button className="btn btn-info text-white">Sign Up</button>
       </div>
     </div>
   );
