@@ -7,8 +7,8 @@ const Header = () => {
       <NavLink to="/">
         <li class="btn btn-outline btn-success hover:text-white">Home</li>
       </NavLink>
-      <NavLink to="/">
-        <li class="btn btn-outline btn-success hover:text-white">
+      <NavLink to="/read">
+        <li class="btn hover:btn-outline hover:btn-success hover:text-white">
           Listed Books
         </li>
       </NavLink>

@@ -6,10 +6,8 @@ const BookDetails = () => {
   const { id } = useParams();
   const bookId = parseInt(id);
   const data = useLoaderData();
-  console.log(data);
   const singleBook =
     (Array.isArray(data) && data?.find((book) => book.bookId === bookId)) || [];
-  console.log(singleBook);
   const {
     image,
     bookName,
