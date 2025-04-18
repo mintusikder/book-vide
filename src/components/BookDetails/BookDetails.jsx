@@ -20,7 +20,7 @@ const BookDetails = () => {
   } = singleBook;
 
   const handelReadMark = (id) => {
-    addToStoredDb(id)
+    addToStoredDb(id);
   };
   return (
     <div className="pt-12">
