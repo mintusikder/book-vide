@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
 import { addToStoredDb } from "../../utitliy/adToDb";
-
+import Swal from 'sweetalert2'
 const BookDetails = () => {
   const { id } = useParams();
   const bookId = parseInt(id);
@@ -20,6 +20,11 @@ const BookDetails = () => {
   } = singleBook;
 
   const handelReadMark = (id) => {
+    Swal.fire({
+      title: "Add Success",
+      icon: "success",
+      draggable: true
+    });
     addToStoredDb(id);
   };
   return (

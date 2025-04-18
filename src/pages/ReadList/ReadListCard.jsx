@@ -5,7 +5,7 @@ const ReadListCard = ({ read }) => {
   const { image, bookName, publisher, totalPages, rating } = read;
   return (
     <div className="card lg:card-side bg-base-100 shadow-sm">
-      <figure className="h-[100px] w-[100px]">
+      <figure className="h-[150px] w-[150px]">
         <img src={image} alt="Album" />
       </figure>
       <div className="card-body">
